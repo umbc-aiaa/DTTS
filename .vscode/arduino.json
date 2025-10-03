@@ -1,0 +1,6 @@
+{
+    "port": "COM18",
+    "configuration": "PartitionScheme=default,PinNumbers=default,USBMode=default",
+    "board": "arduino:esp32:nano_nora",
+    "sketch": "Arduino_Server\\Arduino_Server.ino"
+}

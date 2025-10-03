@@ -1,0 +1,16 @@
+Include/
+Lib/
+Scripts/
+**/pyvenv*
+**/__pycache__/*
+**/temp/*
+
+**/credentials.h
+
+src/test_gemini.py
+src/test_gpt.py
+
+dist/*
+build/*
+
+*/dtts.cfg

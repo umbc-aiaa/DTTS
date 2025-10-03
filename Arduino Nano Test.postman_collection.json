@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "fc2001ff-bd99-4a5b-a5dc-4cf1ba7d656c",
+		"name": "Arduino Nano Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21598975"
+	},
+	"item": [
+		{
+			"name": "Set Polling Rate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/set_blink_delay?t=50",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"set_blink_delay"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Esc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/esc_set_throttle?p=1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"esc_set_throttle"
+					],
+					"query": [
+						{
+							"key": "p",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calibrate Esc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/esc_calibration?status=1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"esc_calibration"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calibrate Scale",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/calibrate_load_cell?weight=10",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"calibrate_load_cell"
+					],
+					"query": [
+						{
+							"key": "weight",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Load Cell Config",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/save_load_cell_config",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"save_load_cell_config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sync Time",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/sync_time?t=0",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"sync_time"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tare",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/tare_load_cell",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"tare_load_cell"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/get_data",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"get_data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wipe Config",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/wipe_prefs",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"wipe_prefs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "estop",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/esc_estop",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"esc_estop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}",
+					"host": [
+						"{{baseURL}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://192.168.50.97:80",
+			"type": "string"
+		}
+	]
+}
