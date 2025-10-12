@@ -1,6 +1,10 @@
+
+// if the board is an ESP32, it uses the two libraries bellow
 #ifdef ESP32
 #include <WiFi.h>
 #include <AsyncTCP.h>
+
+// if the board is an ESP8266, it uses the libraries bellow
 #elif defined(ESP8266)
 #include <ESP8266WiFi.h>
 #include <ESPAsyncTCP.h>
