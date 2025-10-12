@@ -1,11 +1,15 @@
-// if the firstvalue is true, the 
+// if the first microcontroller (ESP32) is connected then use the two libraries bellow
 #ifdef ESP32
 #include <WiFi.h>
 #include <AsyncTCP.h>
+
+// if the second microcontroller (ESP8299) is connected then use the  two libraries bellow
 #elif defined(ESP8266)
 #include <ESP8266WiFi.h>
 #include <ESPAsyncTCP.h>
 #endif
+
+// importing libraries (#include)
 #include <ESPAsyncWebServer.h>
 
 #include "HX711.h"
@@ -15,23 +19,36 @@
 #include <esc.h>
 #include "EEPROM.h"
 
+// defining the inputs/ outputs
+
+  // how long the program will wait for the speed controller 
 #define ESC_TIMEOUT 1000
 
+  // the time between transmissions
 #define UDP_OUTPUT_BUFF_SIZE 2048
 
+    //loading presaved data 
 #define DATA_SAVED_ADDR 0
 #define PREF_SAVE_ADDR 1
 
+  // amount of thrust given in newtons
 #define DEFAULT_LOAD_CELL_SCALE 127.15
 
+// speed controller pin
 #define ESC_PIN 4
+
+ // communication by using the clock pin and the data pin 
 #define LOAD_CELL_CK_PIN 2
 #define LOAD_CELL_DT_PIN 3
+
+  // measures and controls the current pulled by the motor between 80 and -80 amps
 #define CURRENT_SENSE_PIN A0
 #define VOLTAGE_SENSE_PIN A1
 
+  // the average between the first 100 samples, temp note: two algorithms: first, measures samples every 20 milliseconds, two, collects 50 samples every second
 #define MAX_CURRENT_SAMPLES 100
 
+  //the  max length for the wifi credentials for the thrust test
 #define MAX_CREDENTIAL_LENGTH 128
 #define CREDENTIAL_WAIT_TIME_S 10
 
