@@ -9,7 +9,7 @@
 
 #include "HX711.h"
 #include <ArduinoJson.h>
-#include <credentials.h>
+//#include <credentials.h>
 
 #include <esc.h>
 #include "EEPROM.h"
@@ -301,9 +301,12 @@ void setup() {
     // ssid = SSID;
     // password = PASSWORD;
     WiFi.begin(ssid, password);
-    if (WiFi.waitForConnectResult() != WL_CONNECTED) {
-        Serial.printf("WiFi Failed!\n");
-        return;
+    while(WiFi.status() != WL_CONNECTED){
+        delay(1000);
+        Serial.print("[");
+        Serial.print(millis()/1000.0);
+        Serial.print("]");
+        Serial.println(" Waiting for connection...");
     }
     Serial.print("IP Address: ");
     Serial.println(WiFi.localIP());
@@ -397,6 +400,11 @@ void get_ssid_pass(){
             password.concat(curr_char);
         }
     }
+    // Remove white space
+    ssid.replace(" ", "");
+    ssid.replace("\n", "");
+    password.replace(" ", "");
+    password.replace("\n", "");
 
     Serial.println("Connecting to: " + ssid);
 }

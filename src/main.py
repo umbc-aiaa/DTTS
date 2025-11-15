@@ -8,13 +8,13 @@ from components import *
 import os
 import pickle
 
-BOARD_IP = "192.168.214.96"
+BOARD_IP = "10.17.187.96"
 
 class App(Tk):
     def __init__(self, *args, endpoint = "localhost", **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.endpoint = None
+        self.endpoint = endpoint
         self.serial = None
 
         sv_ttk.set_theme("dark")
@@ -238,5 +238,5 @@ if __name__ == "__main__":
     else:
         runProgram = True
     if runProgram:
-        a = App(endpoint=f"http://192.168.153.96:80")
+        a = App(endpoint=f"http://{BOARD_IP}:80")
         a.mainloop()
