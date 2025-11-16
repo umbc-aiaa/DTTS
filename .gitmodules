@@ -1,0 +1,6 @@
+[submodule "frontend/imgui"]
+	path = frontend/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "frontend/glfw"]
+	path = frontend/glfw
+	url = https://github.com/glfw/glfw.git

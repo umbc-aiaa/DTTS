@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/examples.dir/examples.cpp.o -o /home/murali/Documents/Code/DTTS/frontend/bin/examples  libimgui_library.a -lOpenGL -lX11 -lpthread glfw/src/libglfw3.a /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl 
